@@ -1,0 +1,141 @@
+@import url(//fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+
+body {
+    margin:0;
+    font-family:'Open Sans Condensed', sans-serif;
+    text-align:center;
+    color: #999;
+    background-color: #F2FAA7;
+}
+
+.welcome {
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -150px;
+    margin-top: -100px;
+}
+
+a, a:visited {
+    text-decoration:none;
+}
+
+#container {
+    width: 100%;
+}
+
+#scores {
+    width: 100%;
+    height: 312px;
+}
+
+.team {
+    background-color: #C6D068;
+    height: 300px;
+    float: left;
+    border: 1px solid #737D15;
+    margin: 5px;
+    -webkit-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
+    -moz-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
+    box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
+}
+
+.team h1 {
+    color: #000;
+    margin: 0;
+    padding: 10px 0 10px 0;
+    width: 100%;
+    font-size: 24px;
+    background-color: red;
+    border-bottom: 1px solid #737D15;
+}
+
+.score {
+    font-size: 180px;
+    margin: 0;
+    padding: 0;
+    color: #4B5300;
+    font-weight: bold;
+}
+
+.team a {
+    color: #737D15;
+    font-size: 30px;
+}
+
+.modifyscore {
+    margin-top: -49px;
+    width: 107px;
+    height: 46px;
+    float: right;
+}
+
+.team a:hover {
+    color: #4B5300;
+}
+
+#teamA h1 {
+    background-color: pink;
+}
+
+#teamB h1 {
+    background-color: yellow;
+}
+
+#teamC h1 {
+    background-color: blue;
+}
+
+.onethird {
+    width: 32.2%;
+}
+
+#gamebar {
+    width: 98.4%;
+    height: 68px;
+    background-color: #C6D068;
+    float: left;
+    border: 1px solid #737D15;
+    margin: 5px;
+    -webkit-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
+    -moz-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
+    box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
+}
+
+#categorytitle {
+    width: 70%;
+    float: left;
+    font-size: 40px;
+    margin: 5px 0 0 0;
+    font-weight: bold;
+    color: #4B5300;
+}
+
+#gameid {
+    float: right;
+    font-size: 40px;
+    margin: 5px 10px 0 0;
+}
+
+#newgame {
+    -webkit-border-radius: 11;
+    -moz-border-radius: 11;
+    border-radius: 11px;
+    color: #C6D068;
+    font-size: 20px;
+    background: #737D15;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    width: 10%;
+    margin: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    float: left;
+}
+
+#newgame:hover {
+    background: #4B5300;
+    text-decoration: none;
+}

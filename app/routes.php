@@ -13,5 +13,12 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('home');
+});
+
+Route::filter('after', function($response)
+{
+// No caching for pages
+    $response->header("Pragma", "no-cache");
+    $response->header("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0");
 });
