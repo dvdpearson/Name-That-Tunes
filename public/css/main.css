@@ -60,9 +60,10 @@ a, a:visited {
     font-weight: bold;
 }
 
-.team a {
+.team span {
     color: #737D15;
     font-size: 30px;
+    cursor: pointer;
 }
 
 .modifyscore {
@@ -72,7 +73,7 @@ a, a:visited {
     float: right;
 }
 
-.team a:hover {
+.team span:hover {
     color: #4B5300;
 }
 
@@ -102,6 +103,7 @@ a, a:visited {
     -webkit-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
     -moz-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
     box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
+    overflow: hidden;
 }
 
 #categorytitle {
@@ -117,6 +119,7 @@ a, a:visited {
     float: right;
     font-size: 40px;
     margin: 5px 10px 0 0;
+    color: #4B5300;
 }
 
 #newgame {
@@ -138,4 +141,31 @@ a, a:visited {
 #newgame:hover {
     background: #4B5300;
     text-decoration: none;
+}
+
+#gamedetails {
+    width: 29%;
+    height: 200px;
+    float: left;
+    background-color: #C6D068;
+    border: 1px solid #737D15;
+    color: #4B5300;
+    padding: 20px;
+    margin: 5px;
+    -webkit-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
+    -moz-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
+    box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
+}
+
+#gameimage {
+    height: 200px;
+    float: left;
+    background-color: #C6D068;
+    border: 1px solid #737D15;
+    color: #4B5300;
+    padding: 0;
+    margin: 5px;
+    -webkit-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
+    -moz-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
+    box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
 }
