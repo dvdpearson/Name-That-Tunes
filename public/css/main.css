@@ -149,12 +149,16 @@ a, a:visited {
     float: left;
     background-color: #C6D068;
     border: 1px solid #737D15;
-    color: #4B5300;
     padding: 20px;
     margin: 5px;
     -webkit-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
     -moz-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
     box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
+    overflow: hidden;
+}
+
+#gamedetails p {
+    color: #4B5300;
 }
 
 #gameimage {
