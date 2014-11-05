@@ -13,7 +13,21 @@
 
     <script>
         $(document).ready(function() {
+            function hideAnswers() {
+                $('#gameimage').hide();
+                $('#gameanswer').hide();
+            }
+            function showAnswers() {
+                $('#gameimage').show();
+                $('#gameimage').addClass('magictime foolishIn');
+
+                $('#gameanswer').show();
+                $('#gameanswer').addClass('magictime boingInUp');
+            }
+
             $('#commencez').on('click', function() {
+                hideAnswers();
+
                 $.modal("<div id=\"countdown\"><span id=\"clock\"></span><p id='reponse' class='button'>Réponse</p><p id='fermer' class='button'>Fermer</p></div>");
 
                 $('#fermer').on('click', function() {
@@ -22,7 +36,7 @@
 
                 $('#reponse').on('click', function() {
                     $.modal.close();
-                    $('#gameimage').show();
+                    showAnswers();
                 });
 
                 var currentDate = new Date();
@@ -43,6 +57,7 @@
                 $(this).parent().parent().children('.score').html(parseInt(value) - 1);
             });
             $('#newgame').on('click', function () {
+                hideAnswers();
                 if (!$('#categorytitle').hasClass('magictime')) {
                     $('#categorytitle').addClass('magictime tinUpOut');
                     setTimeout(function(){
@@ -122,7 +137,8 @@
                 <img height="241" src="http://cdn.sheknows.com/filter/l/gallery/michael_jackson_thriller_special_edition_album_cover.jpg" />
             </div>
             <div id="gameanswer">
-
+                <p>Michael Jackson</p>
+                <p>Thriller</p>
             </div>
         </div>
     </div>

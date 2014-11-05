@@ -59,6 +59,10 @@ a, a:visited {
     padding: 0;
     color: #4B5300;
     font-weight: bold;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -ms-user-select: none;
 }
 
 .team span {
@@ -72,6 +76,10 @@ a, a:visited {
     width: 107px;
     height: 46px;
     float: right;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -ms-user-select: none;
 }
 
 .team span:hover {
@@ -165,7 +173,7 @@ a, a:visited {
 
 #gameimage {
     display: none;
-    height: 200px;
+    height: 240px;
     float: left;
     background-color: #C6D068;
     border: 1px solid #737D15;
@@ -247,5 +255,22 @@ a, a:visited {
 }
 
 #gameanswer {
+    display: none;
+    width: 32.6%;
+    height: 240px;
+    float: left;
+    background-color: #C6D068;
+    border: 1px solid #737D15;
+    padding: 0px;
+    margin: 5px;
+    -webkit-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
+    -moz-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
+    box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
+    overflow: hidden;
+}
 
+#gameanswer p {
+    font-size: 40px;
+    color: #4B5300;
+    font-weight: bold;
 }
