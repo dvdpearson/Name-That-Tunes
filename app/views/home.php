@@ -92,10 +92,12 @@
             <div id="gamedetails">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquam, magna lobortis venenatis cursus, eros massa sodales tellus, sit amet maximus massa odio in nisi. Vestibulum id felis sed ligula sagittis tristique sed nec eros. Maecenas viverra, lacus vitae efficitur dapibus, sapien odio tincidunt dolor, ac suscipit ipsum nibh a elit.</p>
             </div>
+            <div id="start">
+                <p class="button" id="commencez">Commencez!</p>
+            </div>
             <div id="gameimage">
                 <img height="241" src="http://cdn.sheknows.com/filter/l/gallery/michael_jackson_thriller_special_edition_album_cover.jpg" />
             </div>
-
         </div>
     </div>
 </body>
