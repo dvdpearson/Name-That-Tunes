@@ -8,9 +8,32 @@
     <link rel="stylesheet" href="/css/magic.css">
 
     <script src="/js/jquery-1.11.1.min.js"></script>
+    <script src="/js/jquery.simplemodal.1.4.4.min.js"></script>
+    <script src="/js/jquery.countdown.min.js"></script>
 
     <script>
         $(document).ready(function() {
+            $('#commencez').on('click', function() {
+                $.modal("<div id=\"countdown\"><span id=\"clock\"></span><p id='reponse' class='button'>Réponse</p><p id='fermer' class='button'>Fermer</p></div>");
+
+                $('#fermer').on('click', function() {
+                    $.modal.close();
+                });
+
+                $('#reponse').on('click', function() {
+                    $.modal.close();
+                    $('#gameimage').show();
+                });
+
+                var currentDate = new Date();
+                currentDate.setSeconds(currentDate.getSeconds() + 30);
+                $("#clock").countdown(currentDate, function (event) {
+                    jQuery(this).html(event.strftime('%S'));
+                });
+            });
+
+
+
             $('.modifyscore span.icon-plus').on('click', function() {
                 var value = $(this).parent().parent().children('.score').html();
                 $(this).parent().parent().children('.score').html(parseInt(value) + 1);
@@ -90,13 +113,16 @@
         </div>
         <div id="gameinfo">
             <div id="gamedetails">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquam, magna lobortis venenatis cursus, eros massa sodales tellus, sit amet maximus massa odio in nisi. Vestibulum id felis sed ligula sagittis tristique sed nec eros. Maecenas viverra, lacus vitae efficitur dapibus, sapien odio tincidunt dolor, ac suscipit ipsum nibh a elit.</p>
+                <p style="text-align: left;">1. Écoutez la chanson<br /><br />2. Le premier qui devine gagne 1 pt</p>
             </div>
             <div id="start">
                 <p class="button" id="commencez">Commencez!</p>
             </div>
             <div id="gameimage">
                 <img height="241" src="http://cdn.sheknows.com/filter/l/gallery/michael_jackson_thriller_special_edition_album_cover.jpg" />
+            </div>
+            <div id="gameanswer">
+
             </div>
         </div>
     </div>

@@ -1,4 +1,4 @@
-@import url(//fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+@import url('opensanscondesed.css');
 
 body {
     margin:0;
@@ -160,9 +160,11 @@ a, a:visited {
 
 #gamedetails p {
     color: #4B5300;
+    font-size: 28px;
 }
 
 #gameimage {
+    display: none;
     height: 200px;
     float: left;
     background-color: #C6D068;
@@ -213,4 +215,37 @@ a, a:visited {
     padding-top: 95px;
     width: 150px;
     height: 110px;
+}
+
+#countdown {
+    width: 950px;
+    height: 500px;
+    float: left;
+    background-color: #C6D068;
+    border: 1px solid #737D15;
+    color: #4B5300;
+    padding: 0;
+    margin: 5px;
+    -webkit-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
+    -moz-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
+    box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
+}
+
+#clock {
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 430px;
+    color: red;
+}
+
+#reponse {
+    clear: both;
+}
+
+#fermer {
+    clear: both;
+}
+
+#gameanswer {
+
 }
