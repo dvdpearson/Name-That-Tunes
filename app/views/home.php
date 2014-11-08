@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Name That Tune</title>
+	<title>Name That Tune - 2014</title>
+
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/fontello.css">
     <link rel="stylesheet" href="/css/magic.css">
@@ -11,141 +12,7 @@
     <script src="/js/jquery-1.11.1.min.js"></script>
     <script src="/js/jquery.simplemodal.1.4.4.min.js"></script>
     <script src="/js/jquery.countdown.js"></script>
-
-    <script>
-        $(document).ready(function() {
-            function setScore(team, score) {
-                $.ajax({
-                    type: "PUT",
-                    url: "/team/" + team,
-                    data: { pts: score }
-                });
-            }
-            function hideAnswers() {
-                $('#gameimage').hide();
-                $('#gameanswer').hide();
-            }
-            function showAnswers() {
-                $.ajax({
-                    type: "GET",
-                    url: "/game/" + $('#gameid').html()
-                }).done(function (game) {
-                    $('#gameimage').show();
-                    $('#gameimage').addClass('magictime puffIn');
-
-                    $('#gameanswer').show();
-                    var answer = '';
-                    if (game.gameName.trim() == 'Devinez la chanson sans paroles' ||
-                        game.gameName.trim() == 'Écoutez la chanson' ||
-                        game.gameName.trim() == 'Mime musical') {
-                        answer = '<p>'+game.tuneArtist+'</p><p>'+game.tuneName+'</p>';
-                    }
-                    $('#gameanswer').html(answer);
-                    $('#gameanswer').addClass('magictime boingInUp');
-                });
-            }
-
-            $('#commencez').on('click', function() {
-                hideAnswers();
-
-                $('#countdown').modal(
-                    {
-                        maxHeight: '100%',
-                        maxWidth: '100%'
-                    }
-                );
-
-                $('#fermer').on('click', function() {
-                    $.modal.close();
-                });
-
-                $('#reponse').on('click', function() {
-                    $.modal.close();
-                    showAnswers();
-                });
-
-                var currentDate = new Date();
-                var seconds = 0;
-                $.ajax({
-                    type: "GET",
-                    url: "/game/" + $('#gameid').html()
-                }).done(function (game) {
-                    currentDate.setSeconds(currentDate.getSeconds() + game.timer);
-                    $("#clock").countdown(currentDate, function (event) {
-                        jQuery(this).html(event.strftime('%S'));
-                    });
-                });
-            });
-
-
-
-            $('.modifyscore span.icon-plus').on('click', function() {
-                var score = $(this).parent().parent().children('.score').html();
-                var newScore = parseInt(score) + 1;
-                var team = $(this).parent().parent().attr('id');
-
-                $(this).parent().parent().children('.score').html(newScore);
-                setScore(team, newScore);
-            });
-            $('.modifyscore span.icon-minus').on('click', function() {
-                var score = $(this).parent().parent().children('.score').html();
-                var team = $(this).parent().parent().attr('id');
-                var newScore = parseInt(score) - 1;
-
-                $(this).parent().parent().children('.score').html(newScore);
-                setScore(team, newScore);
-            });
-            $('#newgame').on('click', function () {
-                $.ajax({
-                    type: "GET",
-                    url: "/game"
-                }).done(function (game) {
-                    hideAnswers();
-                    if (!$('#categorytitle').hasClass('magictime')) {
-                        $('#categorytitle').addClass('magictime tinUpOut');
-                        setTimeout(function(){
-                            $('#categorytitle').removeClass('magictime tinUpOut');
-                            $('#categorytitle').show();
-                            if (game.gameName.trim() == 'Écoutez la chanson') {
-                                $('#categorytitle').html(game.gameName+' - Catégorie: '+game.category);
-                            }
-                            else {
-                                $('#categorytitle').html(game.gameName);
-                            }
-                            $('#categorytitle').addClass('magictime puffIn');
-                            setTimeout(function(){
-                                $('#categorytitle').removeClass('magictime puffIn');
-                            }, 1000 );
-                        }, 1000 );
-                    }
-                    if (!$('#gameid').hasClass('magictime')) {
-                        $('#gameid').addClass('magictime holeOut');
-                        setTimeout(function(){
-                            $('#gameid').removeClass('magictime holeOut');
-                            $('#gameid').show();
-                            $('#gameid').html(game.gameId);
-                            $('#gameid').addClass('magictime swap');
-                            setTimeout(function(){
-                                $('#gameid').removeClass('magictime swap');
-                            }, 1000 );
-                        }, 1000 );
-                    }
-                    if (!$('#gamedetails p').hasClass('magictime')) {
-                        $('#gamedetails p').addClass('magictime swashOut');
-                        setTimeout(function(){
-                            $('#gamedetails p').removeClass('magictime swashOut');
-                            $('#gamedetails').show();
-                            $('#gamedetails p').show();
-                            $('#gamedetails p').addClass('magictime slideRightRetourn');
-                            setTimeout(function(){
-                                $('#gamedetails p').removeClass('magictime slideRightRetourn');
-                            }, 1000 );
-                        }, 1000 );
-                    }
-                });
-            });
-        });
-    </script>
+    <script src="/js/ntt.js"></script>
 
 </head>
 <body>
@@ -189,7 +56,7 @@
         <div id="gameinfo">
             <div id="gamedetails" class="onethird">
                 <p class="button" id="commencez">Commencez!</p>
-                <p style="text-align: left;">1. Écoutez la chanson<br /><br />2. Le premier qui devine gagne 1 pt</p>
+                <p style="text-align: left;" id="explications">1. Écoutez la chanson<br /><br />2. Le premier qui devine gagne 1 pt</p>
             </div>
             <div id="gameimage">
                 <img height="241" src="http://cdn.sheknows.com/filter/l/gallery/michael_jackson_thriller_special_edition_album_cover.jpg" />
