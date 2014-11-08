@@ -87,15 +87,15 @@ a, a:visited {
     color: #4B5300;
 }
 
-#teamA h1 {
+#pink h1 {
     background-color: deeppink;
 }
 
-#teamB h1 {
+#yellow h1 {
     background-color: yellow;
 }
 
-#teamC h1 {
+#green h1 {
     background-color: forestgreen;
 }
 
@@ -117,6 +117,7 @@ a, a:visited {
 }
 
 #categorytitle {
+    display: none;
     width: 70%;
     float: left;
     font-size: 40px;
@@ -126,6 +127,7 @@ a, a:visited {
 }
 
 #gameid {
+    display: none;
     float: right;
     font-size: 40px;
     margin: 5px 10px 0 0;
@@ -173,6 +175,7 @@ a, a:visited {
 }
 
 #gamedetails p {
+    display: none;
     color: #4B5300;
     font-size: 28px;
 }

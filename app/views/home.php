@@ -14,6 +14,13 @@
 
     <script>
         $(document).ready(function() {
+            function setScore(team, score) {
+                $.ajax({
+                    type: "PUT",
+                    url: "/team/" + team,
+                    data: { pts: score }
+                });
+            }
             function hideAnswers() {
                 $('#gameimage').hide();
                 $('#gameanswer').hide();
@@ -55,12 +62,20 @@
 
 
             $('.modifyscore span.icon-plus').on('click', function() {
-                var value = $(this).parent().parent().children('.score').html();
-                $(this).parent().parent().children('.score').html(parseInt(value) + 1);
+                var score = $(this).parent().parent().children('.score').html();
+                var newScore = parseInt(score) + 1;
+                var team = $(this).parent().parent().attr('id');
+
+                $(this).parent().parent().children('.score').html(newScore);
+                setScore(team, newScore);
             });
             $('.modifyscore span.icon-minus').on('click', function() {
-                var value = $(this).parent().parent().children('.score').html();
-                $(this).parent().parent().children('.score').html(parseInt(value) - 1);
+                var score = $(this).parent().parent().children('.score').html();
+                var team = $(this).parent().parent().attr('id');
+                var newScore = parseInt(score) - 1;
+
+                $(this).parent().parent().children('.score').html(newScore);
+                setScore(team, newScore);
             });
             $('#newgame').on('click', function () {
                 hideAnswers();
@@ -68,6 +83,7 @@
                     $('#categorytitle').addClass('magictime tinUpOut');
                     setTimeout(function(){
                         $('#categorytitle').removeClass('magictime tinUpOut');
+                        $('#categorytitle').show();
                         $('#categorytitle').addClass('magictime puffIn');
                         setTimeout(function(){
                             $('#categorytitle').removeClass('magictime puffIn');
@@ -78,6 +94,7 @@
                     $('#gameid').addClass('magictime holeOut');
                     setTimeout(function(){
                         $('#gameid').removeClass('magictime holeOut');
+                        $('#gameid').show();
                         $('#gameid').addClass('magictime swap');
                         setTimeout(function(){
                             $('#gameid').removeClass('magictime swap');
@@ -88,6 +105,7 @@
                     $('#gamedetails p').addClass('magictime swashOut');
                     setTimeout(function(){
                         $('#gamedetails p').removeClass('magictime swashOut');
+                        $('#gamedetails p').show();
                         $('#gamedetails p').addClass('magictime slideRightRetourn');
                         setTimeout(function(){
                             $('#gamedetails p').removeClass('magictime slideRightRetourn');
@@ -107,25 +125,25 @@
             <p id='fermer' class='button'>Fermer</p>
         </div>
         <div id="scores">
-            <div id="teamA" class="team onethird">
+            <div id="pink" class="team onethird">
                 <h1>Équipe ROSE NANANE</h1>
-                <p class="score">12</p>
+                <p class="score"><?php echo $pinkScore; ?></p>
                 <p class="modifyscore">
                     <span class="icon-plus" href="#"></span><br />
                     <span class="icon-minus" href="#"></span>
                 </p>
             </div>
-            <div id="teamB" class="team onethird">
+            <div id="yellow" class="team onethird">
                 <h1>Équipe JAUNE SERIN</h1>
-                <p class="score">3</p>
+                <p class="score"><?php echo $yellowScore; ?></p>
                 <p class="modifyscore">
                     <span class="icon-plus" href="#"></span><br />
                     <span class="icon-minus" href="#"></span>
                 </p>
             </div>
-            <div id="teamC" class="team onethird">
+            <div id="green" class="team onethird">
                 <h1>Équipe VERT CACA D'OIE</h1>
-                <p class="score">29</p>
+                <p class="score"><?php echo $greenScore; ?></p>
                 <p class="modifyscore">
                     <span class="icon-plus" href="#"></span><br />
                     <span class="icon-minus" href="#"></span>

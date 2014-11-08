@@ -13,7 +13,20 @@
 
 Route::get('/', function()
 {
-	return View::make('home');
+    $data = array(
+        'pinkScore' => Team::where('name', 'pink')->firstOrFail()->pts,
+        'yellowScore' => Team::where('name', 'yellow')->firstOrFail()->pts,
+        'greenScore' => Team::where('name', 'green')->firstOrFail()->pts
+    );
+	return View::make('home', $data);
+});
+
+Route::put('/team/{team}', function($teamName)
+{
+    $team = Team::where('name', $teamName)->firstOrFail();
+    $team->pts = Input::get('pts');
+    $team->save();
+    return $team;
 });
 
 Route::filter('after', function($response)
