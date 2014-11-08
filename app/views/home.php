@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/fontello.css">
     <link rel="stylesheet" href="/css/magic.css">
+    <link rel="stylesheet" href="/css/opensanscondesed.css">
 
     <script src="/js/jquery-1.11.1.min.js"></script>
     <script src="/js/jquery.simplemodal.1.4.4.min.js"></script>
@@ -19,7 +20,7 @@
             }
             function showAnswers() {
                 $('#gameimage').show();
-                $('#gameimage').addClass('magictime foolishIn');
+                $('#gameimage').addClass('magictime puffIn');
 
                 $('#gameanswer').show();
                 $('#gameanswer').addClass('magictime boingInUp');
@@ -28,7 +29,12 @@
             $('#commencez').on('click', function() {
                 hideAnswers();
 
-                $.modal("<div id=\"countdown\"><span id=\"clock\"></span><p id='reponse' class='button'>Réponse</p><p id='fermer' class='button'>Fermer</p></div>");
+                $('#countdown').modal(
+                    {
+                        maxHeight: '100%',
+                        maxWidth: '100%'
+                    }
+                );
 
                 $('#fermer').on('click', function() {
                     $.modal.close();
@@ -95,28 +101,33 @@
 </head>
 <body>
     <div id="container">
+        <div id="countdown">
+            <span id="clock"></span>
+            <p id='reponse' class='button'>Réponse</p>
+            <p id='fermer' class='button'>Fermer</p>
+        </div>
         <div id="scores">
             <div id="teamA" class="team onethird">
-                <h1>Équipe Rose</h1>
+                <h1>Équipe ROSE NANANE</h1>
                 <p class="score">12</p>
                 <p class="modifyscore">
-                    <span class="icon-plus" href="#"></span>
+                    <span class="icon-plus" href="#"></span><br />
                     <span class="icon-minus" href="#"></span>
                 </p>
             </div>
             <div id="teamB" class="team onethird">
-                <h1>Équipe Jaune</h1>
+                <h1>Équipe JAUNE SERIN</h1>
                 <p class="score">3</p>
                 <p class="modifyscore">
-                    <span class="icon-plus" href="#"></span>
+                    <span class="icon-plus" href="#"></span><br />
                     <span class="icon-minus" href="#"></span>
                 </p>
             </div>
             <div id="teamC" class="team onethird">
-                <h1>Équipe Bleue</h1>
+                <h1>Équipe VERT CACA D'OIE</h1>
                 <p class="score">29</p>
                 <p class="modifyscore">
-                    <span class="icon-plus" href="#"></span>
+                    <span class="icon-plus" href="#"></span><br />
                     <span class="icon-minus" href="#"></span>
                 </p>
             </div>
@@ -127,11 +138,9 @@
             <p id="gameid">#401</p>
         </div>
         <div id="gameinfo">
-            <div id="gamedetails">
-                <p style="text-align: left;">1. Écoutez la chanson<br /><br />2. Le premier qui devine gagne 1 pt</p>
-            </div>
-            <div id="start">
+            <div id="gamedetails" class="onethird">
                 <p class="button" id="commencez">Commencez!</p>
+                <p style="text-align: left;">1. Écoutez la chanson<br /><br />2. Le premier qui devine gagne 1 pt</p>
             </div>
             <div id="gameimage">
                 <img height="241" src="http://cdn.sheknows.com/filter/l/gallery/michael_jackson_thriller_special_edition_album_cover.jpg" />
