@@ -11,4 +11,6 @@ class Game extends Eloquent {
 
     public $timestamps = false;
 
+    protected $primaryKey = 'gameId';
+
 }

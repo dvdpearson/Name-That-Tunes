@@ -29,6 +29,20 @@ Route::put('/team/{team}', function($teamName)
     return $team;
 });
 
+Route::get('/game', function()
+{
+    $game = Game::where('used', '!=', '1')->orderBy(DB::raw('RAND()'))->firstOrFail();
+    //$game->used = 1;
+    //$game->save();
+    return $game;
+});
+
+Route::get('/game/{id}', function($id)
+{
+    $game = Game::find($id);
+    return $game;
+});
+
 Route::filter('after', function($response)
 {
 // No caching for pages

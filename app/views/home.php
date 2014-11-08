@@ -26,11 +26,23 @@
                 $('#gameanswer').hide();
             }
             function showAnswers() {
-                $('#gameimage').show();
-                $('#gameimage').addClass('magictime puffIn');
+                $.ajax({
+                    type: "GET",
+                    url: "/game/" + $('#gameid').html()
+                }).done(function (game) {
+                    $('#gameimage').show();
+                    $('#gameimage').addClass('magictime puffIn');
 
-                $('#gameanswer').show();
-                $('#gameanswer').addClass('magictime boingInUp');
+                    $('#gameanswer').show();
+                    var answer = '';
+                    if (game.gameName.trim() == 'Devinez la chanson sans paroles' ||
+                        game.gameName.trim() == 'Écoutez la chanson' ||
+                        game.gameName.trim() == 'Mime musical') {
+                        answer = '<p>'+game.tuneArtist+'</p><p>'+game.tuneName+'</p>';
+                    }
+                    $('#gameanswer').html(answer);
+                    $('#gameanswer').addClass('magictime boingInUp');
+                });
             }
 
             $('#commencez').on('click', function() {
@@ -53,9 +65,15 @@
                 });
 
                 var currentDate = new Date();
-                currentDate.setSeconds(currentDate.getSeconds() + 30);
-                $("#clock").countdown(currentDate, function (event) {
-                    jQuery(this).html(event.strftime('%S'));
+                var seconds = 0;
+                $.ajax({
+                    type: "GET",
+                    url: "/game/" + $('#gameid').html()
+                }).done(function (game) {
+                    currentDate.setSeconds(currentDate.getSeconds() + game.timer);
+                    $("#clock").countdown(currentDate, function (event) {
+                        jQuery(this).html(event.strftime('%S'));
+                    });
                 });
             });
 
@@ -78,40 +96,53 @@
                 setScore(team, newScore);
             });
             $('#newgame').on('click', function () {
-                hideAnswers();
-                if (!$('#categorytitle').hasClass('magictime')) {
-                    $('#categorytitle').addClass('magictime tinUpOut');
-                    setTimeout(function(){
-                        $('#categorytitle').removeClass('magictime tinUpOut');
-                        $('#categorytitle').show();
-                        $('#categorytitle').addClass('magictime puffIn');
+                $.ajax({
+                    type: "GET",
+                    url: "/game"
+                }).done(function (game) {
+                    hideAnswers();
+                    if (!$('#categorytitle').hasClass('magictime')) {
+                        $('#categorytitle').addClass('magictime tinUpOut');
                         setTimeout(function(){
-                            $('#categorytitle').removeClass('magictime puffIn');
+                            $('#categorytitle').removeClass('magictime tinUpOut');
+                            $('#categorytitle').show();
+                            if (game.gameName.trim() == 'Écoutez la chanson') {
+                                $('#categorytitle').html(game.gameName+' - Catégorie: '+game.category);
+                            }
+                            else {
+                                $('#categorytitle').html(game.gameName);
+                            }
+                            $('#categorytitle').addClass('magictime puffIn');
+                            setTimeout(function(){
+                                $('#categorytitle').removeClass('magictime puffIn');
+                            }, 1000 );
                         }, 1000 );
-                    }, 1000 );
-                }
-                if (!$('#gameid').hasClass('magictime')) {
-                    $('#gameid').addClass('magictime holeOut');
-                    setTimeout(function(){
-                        $('#gameid').removeClass('magictime holeOut');
-                        $('#gameid').show();
-                        $('#gameid').addClass('magictime swap');
+                    }
+                    if (!$('#gameid').hasClass('magictime')) {
+                        $('#gameid').addClass('magictime holeOut');
                         setTimeout(function(){
-                            $('#gameid').removeClass('magictime swap');
+                            $('#gameid').removeClass('magictime holeOut');
+                            $('#gameid').show();
+                            $('#gameid').html(game.gameId);
+                            $('#gameid').addClass('magictime swap');
+                            setTimeout(function(){
+                                $('#gameid').removeClass('magictime swap');
+                            }, 1000 );
                         }, 1000 );
-                    }, 1000 );
-                }
-                if (!$('#gamedetails p').hasClass('magictime')) {
-                    $('#gamedetails p').addClass('magictime swashOut');
-                    setTimeout(function(){
-                        $('#gamedetails p').removeClass('magictime swashOut');
-                        $('#gamedetails p').show();
-                        $('#gamedetails p').addClass('magictime slideRightRetourn');
+                    }
+                    if (!$('#gamedetails p').hasClass('magictime')) {
+                        $('#gamedetails p').addClass('magictime swashOut');
                         setTimeout(function(){
-                            $('#gamedetails p').removeClass('magictime slideRightRetourn');
+                            $('#gamedetails p').removeClass('magictime swashOut');
+                            $('#gamedetails').show();
+                            $('#gamedetails p').show();
+                            $('#gamedetails p').addClass('magictime slideRightRetourn');
+                            setTimeout(function(){
+                                $('#gamedetails p').removeClass('magictime slideRightRetourn');
+                            }, 1000 );
                         }, 1000 );
-                    }, 1000 );
-                }
+                    }
+                });
             });
         });
     </script>
