@@ -164,7 +164,7 @@
             if ((this.totalSecsLeft % 60) <= 10) {
                 $('#clock').css('color', 'red');
             } else if ((this.totalSecsLeft % 60) <= 15) {
-                $('#clock').css('color', 'orange');
+                $('#clock').css('color', 'yellow');
             }
             this.offset = {
                 seconds: this.totalSecsLeft % 60,

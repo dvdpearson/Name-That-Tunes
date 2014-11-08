@@ -4,10 +4,11 @@
 	<meta charset="UTF-8">
 	<title>Name That Tune - 2014</title>
 
+    <link rel="stylesheet" href="/css/opensanscondesed.css">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/fontello.css">
     <link rel="stylesheet" href="/css/magic.css">
-    <link rel="stylesheet" href="/css/opensanscondesed.css">
+
 
     <script src="/js/jquery-1.11.1.min.js"></script>
     <script src="/js/jquery.simplemodal.1.4.4.min.js"></script>
