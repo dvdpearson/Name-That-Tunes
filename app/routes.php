@@ -32,6 +32,18 @@ Route::put('/team/{team}', function($teamName)
 Route::get('/game', function()
 {
     $game = Game::where('used', '!=', '1')->orderBy(DB::raw('RAND()'))->firstOrFail();
+    if (trim($game->gameName) !== "Quiz musical") {
+        // TODO: uncomment for prod
+        //$game->used = 1;
+        //$game->save();
+    }
+    return $game;
+});
+
+Route::get('/game/quiz/{category}', function($category)
+{
+    $game = Game::where('category', $category)->orderBy(DB::raw('RAND()'))->firstOrFail();
+    // TODO: uncomment for prod
     //$game->used = 1;
     //$game->save();
     return $game;
@@ -40,6 +52,14 @@ Route::get('/game', function()
 Route::get('/game/{id}', function($id)
 {
     $game = Game::find($id);
+    return $game;
+});
+
+Route::put('/game/{id}', function($id)
+{
+    $game = Game::where('gameId', $id)->firstOrFail();
+    $game->used = Input::get('used');
+    $game->save();
     return $game;
 });
 

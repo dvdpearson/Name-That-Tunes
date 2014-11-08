@@ -260,6 +260,20 @@ a, a:visited {
     -moz-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
     box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
 }
+#quizchoice {
+    display: none;
+    width: 580px;
+    height: 270px;
+    float: left;
+    background-color: #C6D068;
+    border: 1px solid #737D15;
+    color: #4B5300;
+    padding: 0;
+    margin: 5px;
+    -webkit-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
+    -moz-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
+    box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
+}
 
 #clock {
     font-family: Arial;
@@ -273,6 +287,41 @@ a, a:visited {
 
 #fermer {
     clear: both;
+}
+
+#question {
+    clear: both;
+}
+
+#question {
+    display: none;
+    float: left;
+    font-size: 34px;
+    margin: 0;
+    font-weight: bold;
+    width: 260px;
+    margin-top: 29px;
+    margin-left: 14px;
+    padding: 0;
+}
+
+#choixNiveau {
+    width: 340px;
+    margin: auto;
+}
+
+#difficile {
+    width: 110px;
+    font-size: 18px;
+    color: red;
+    float: left;
+}
+
+#facile {
+    width: 110px;
+    font-size: 18px;
+    color: white;
+    float: left;
 }
 
 #gameanswer {
@@ -294,4 +343,12 @@ a, a:visited {
     font-size: 35px;
     color: #4B5300;
     font-weight: bold;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
 }

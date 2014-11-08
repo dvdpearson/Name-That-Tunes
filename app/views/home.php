@@ -17,10 +17,19 @@
 </head>
 <body>
     <div id="container">
+        <div id="quizchoice">
+            <h1>Catégorie Quiz!</h1>
+            <h2>Quel niveau voulez-vous votre question-quiz ?</h2>
+            <div id="choixNiveau">
+                <p id='difficile' class='button'>Difficile (5 points)</p>
+                <p id='facile' class='button'>Facile (1 point)</p>
+            </div>
+        </div>
         <div id="countdown">
             <span id="clock"></span>
             <p id='reponse' class='button'>Réponse</p>
             <p id='fermer' class='button'>Fermer</p>
+            <p id='question'>Question ici sadsa dsa dsadwqewq ewq e.. ?</p>
         </div>
         <div id="scores">
             <div id="pink" class="team onethird">
@@ -58,12 +67,12 @@
                 <p class="button" id="commencez">Commencez!</p>
                 <p style="text-align: left;" id="explications">1. Écoutez la chanson<br /><br />2. Le premier qui devine gagne 1 pt</p>
             </div>
-            <div id="gameimage">
-                <img height="241" src="http://cdn.sheknows.com/filter/l/gallery/michael_jackson_thriller_special_edition_album_cover.jpg" />
-            </div>
             <div id="gameanswer">
                 <p>Michael Jackson</p>
                 <p>Thriller</p>
+            </div>
+            <div id="gameimage">
+                <img height="241" src="http://cdn.sheknows.com/filter/l/gallery/michael_jackson_thriller_special_edition_album_cover.jpg" />
             </div>
         </div>
     </div>
