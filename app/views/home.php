@@ -4,10 +4,13 @@
 	<meta charset="UTF-8">
 	<title>Name That Tune - 2014</title>
 
+    <link rel="icon" href="img/favicon.png" type="image/png" sizes="16x16">
+
     <link rel="stylesheet" href="/css/opensanscondesed.css">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/fontello.css">
     <link rel="stylesheet" href="/css/magic.css">
+    <link rel="stylesheet" href="/css/animate.css">
 
 
     <script src="/js/jquery-1.11.1.min.js"></script>

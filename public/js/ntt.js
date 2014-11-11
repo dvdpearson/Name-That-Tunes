@@ -50,15 +50,15 @@ $(document).ready(function () {
             setTimeout(function () {
                 $('#gamedetails p').removeClass('magictime swashOut');
                 if (game.gameName.trim() == 'Devinez la chanson sans paroles') {
-                    $('#explications').html('1. Un membre délégué pour écouter, avec casque d\'écoute<br><br>2. Si trouvée dans les temps, 1 point');
+                    $('#explications').html('1. Capitaine sélectionne un joueur.<br />2. Écouteurs sur les oreilles pendant 30 secondes.<br />3. Chanter sans paroles ou dire des lalala.<br />4. Aucun indice à l\'équipe. 1 point pour la bonne réponse.');
                 } else if (game.gameName.trim() == 'Sifflez la chanson') {
-                    $('#explications').html('1. Un membre délégué pour siffler<br><br>2. Si trouvée dans les temps, 1 point');
+                    $('#explications').html('1. Capitaine sélectionne un joueur.<br />2. Carte SIFFLEZ LA CHANSON avec le nom de de l\'artiste et le titre à siffler.<br />3. 20 secondes pour siffler ou chanter la bouche fermée.<br />4. Aucune parole. Aucun indice à l\'équipe. 1 point pour la bonne réponse.');
                 } else if (game.gameName.trim() == 'Quiz musical') {
-                    $('#explications').html('1. Lecture à toute l\'équipe la question<br><br>2. Si trouvé diffile, 5 point, sinon 1 point');
+                    $('#explications').html('1. Toute l\'équipe joue.<br />2. Le capitaine décide de la question à 1 point (facile) ou à 5 points (difficile).<br />3. Consultation de 20 secondes après la question.<br />4. Le capitaine donne la réponse.<br />5. Si la réponse est bonne, les points seront attribués.<br />6. Si la question à 5 points est mauvaise, un shooter devra être pris et le maître de jeu décide de qui le prendra dans l\'équipe.');
                 } else if (game.gameName.trim() == 'Écoutez la chanson') {
-                    $('#explications').html('1. Écoutez la chanson en équipe<br><br>2. Si trouvée dans les temps, 1 point');
+                    $('#explications').html('1. Toute l\'équipe joue.<br />2. Extrait de 20 secondes.<br />3. 1 point pour la bonne réponse.<br />4. Si non répondu, droit de réplique à l\'équipe suivante.<br />5. Si les 3 équipes ne trouvent pas la réponse, point annulé.');
                 } else if (game.gameName.trim() == 'Mime musical') {
-                    $('#explications').html('1. Choisissez un mineur pour chaque équipe<br><br>2. L\'équipe qui a trouvée dans les temps, 1 point');
+                    $('#explications').html('1. Toute l\'équipe joue.<br />2. Les capitaine décident du joueur qui mimera à son équipe le groupe, l\'artiste ou le titre de la chanson inscrits sur la carte de jeu.<br />3. Même mime à faire pour les 3 équipes en même temps.<br />4. Un indice pour les 3 équipes. 30 secondes.<br />5. Pas de réponse? 2e indice.<br />6. 1 point pour la bonne réponse. 5 points si l\'équipe avait la main.');
                 }
                 $('#gamedetails').show();
                 $('#gamedetails p').show();
@@ -81,6 +81,7 @@ $(document).ready(function () {
             url: "/game/" + $('#gameid').html()
         }).done(function (game) {
 
+            $('#gameimage img').attr('src', '/covers/'+game.gameId+'.jpg');
             $('#gameimage').show();
             $('#gameimage').addClass('magictime puffIn');
 

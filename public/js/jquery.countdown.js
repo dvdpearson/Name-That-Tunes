@@ -160,12 +160,24 @@
             this.totalSecsLeft = Math.ceil(this.totalSecsLeft / 1e3);
             this.totalSecsLeft = this.totalSecsLeft < 0 ? 0 : this.totalSecsLeft;
 
-
             if ((this.totalSecsLeft % 60) <= 10) {
                 $('#clock').css('color', 'red');
+                if (!$('#clock').hasClass('animated')) {
+                    $('#clock').addClass('animated tada');
+                    $('#clock').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+                        $('#clock').removeClass('animated tada');
+                    });
+                }
             } else if ((this.totalSecsLeft % 60) <= 15) {
                 $('#clock').css('color', 'yellow');
+                if (!$('#clock').hasClass('animated')) {
+                    $('#clock').addClass('animated pulse');
+                    $('#clock').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+                        $('#clock').removeClass('animated pulse');
+                    });
+                }
             }
+
             this.offset = {
                 seconds: this.totalSecsLeft % 60,
                 minutes: Math.floor(this.totalSecsLeft / 60) % 60,
@@ -179,6 +191,9 @@
             if (this.totalSecsLeft === 0) {
                 this.stop();
                 this.dispatchEvent("finish");
+                $('#clock').css('color', 'red');
+                $('#clock').removeClass('animated flip');
+                $('#clock').addClass('animated flip');
             } else {
                 this.dispatchEvent("update");
             }
