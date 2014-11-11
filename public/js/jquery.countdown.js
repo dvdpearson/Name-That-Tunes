@@ -161,7 +161,7 @@
             this.totalSecsLeft = this.totalSecsLeft < 0 ? 0 : this.totalSecsLeft;
 
             if ((this.totalSecsLeft % 60) <= 10) {
-                $('#clock').css('color', 'red');
+                $('#clock').css('color', '#3A0C0C');
                 if (!$('#clock').hasClass('animated')) {
                     $('#clock').addClass('animated tada');
                     $('#clock').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
@@ -191,7 +191,7 @@
             if (this.totalSecsLeft === 0) {
                 this.stop();
                 this.dispatchEvent("finish");
-                $('#clock').css('color', 'red');
+                $('#clock').css('color', '#3A0C0C');
                 $('#clock').removeClass('animated flip');
                 $('#clock').addClass('animated flip');
             } else {

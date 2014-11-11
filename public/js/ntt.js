@@ -89,11 +89,12 @@ $(document).ready(function () {
             var answer = '';
             if (game.gameName.trim() == 'Devinez la chanson sans paroles' ||
                 game.gameName.trim() == 'Écoutez la chanson' ||
-                game.gameName.trim() == 'Mime musical') {
-                answer = '<p>' + game.tuneArtist + '</p><p>' + game.tuneName + '</p>';
+                game.gameName.trim() == 'Mime musical' ||
+                game.gameName.trim() == 'Sifflez la chanson') {
+                answer = '<p style="margin-bottom: 10px;">' + game.tuneArtist + '</p><p style="margin-top: 10px;">' + game.tuneName + '</p>';
             } else if (game.gameName.trim() == 'Quiz musical') {
                 $('#gameimage').hide();
-                answer = '<p style="margin-top: 92px;">' + game.answer + '</p>';
+                answer = '<p style="margin-top: 71px;">' + game.answer + '</p>';
             }
             $('#gameanswer').html(answer);
             $('#gameanswer').addClass('magictime boingInUp');

@@ -37,6 +37,7 @@
         </div>
         <div id="scores">
             <div id="pink" class="team onethird">
+                <img src="/img/cri.jpg" class="cri" />
                 <h1>Équipe ROSE NANANE</h1>
                 <p class="score"><?php echo $pinkScore; ?></p>
                 <p class="modifyscore">
@@ -45,6 +46,7 @@
                 </p>
             </div>
             <div id="yellow" class="team onethird">
+                <img src="/img/cri.jpg" class="cri" />
                 <h1>Équipe JAUNE SERIN</h1>
                 <p class="score"><?php echo $yellowScore; ?></p>
                 <p class="modifyscore">
@@ -53,6 +55,7 @@
                 </p>
             </div>
             <div id="green" class="team onethird">
+                <img src="/img/cri.jpg" class="cri" />
                 <h1>Équipe VERT CACA D'OIE</h1>
                 <p class="score"><?php echo $greenScore; ?></p>
                 <p class="modifyscore">
@@ -76,7 +79,7 @@
                 <p>Thriller</p>
             </div>
             <div id="gameimage">
-                <img height="241" src="http://cdn.sheknows.com/filter/l/gallery/michael_jackson_thriller_special_edition_album_cover.jpg" />
+                <img width="241" height="241" src="http://cdn.sheknows.com/filter/l/gallery/michael_jackson_thriller_special_edition_album_cover.jpg" />
             </div>
         </div>
     </div>

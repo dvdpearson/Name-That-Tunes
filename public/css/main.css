@@ -16,11 +16,12 @@ body {
     font-family: 'Open Sans Condensed', sans-serif;
     text-align:center;
     color: #999;
-    background-color: #F2FAA7;
+    background-color: #fff;
     -webkit-user-select: none;
     -moz-user-select: none;
     -khtml-user-select: none;
     -ms-user-select: none;
+    overflow: hidden;
 }
 
 .welcome {
@@ -38,7 +39,7 @@ a, a:visited {
 }
 
 #container {
-    width: 80%;
+    width: 100%;
     margin: auto;
 }
 
@@ -48,10 +49,11 @@ a, a:visited {
 }
 
 .team {
-    background-color: #C6D068;
+    position: relative;
+    background-color: #c3292b;
     height: 300px;
     float: left;
-    border: 1px solid #737D15;
+    border: 1px solid #992022;
     margin: 5px;
     -webkit-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
     -moz-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
@@ -65,7 +67,7 @@ a, a:visited {
     width: 100%;
     font-size: 24px;
     background-color: red;
-    border-bottom: 1px solid #737D15;
+    border-bottom: 1px solid #992022;
 }
 
 .score {
@@ -73,7 +75,7 @@ a, a:visited {
     font-family: 'Arial';
     margin: 0;
     padding: 0;
-    color: #4B5300;
+    color: #751819;
     font-weight: bold;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -82,7 +84,7 @@ a, a:visited {
 }
 
 .team span {
-    color: #737D15;
+    color: #992022;
     font-size: 30px;
     cursor: pointer;
 }
@@ -101,7 +103,7 @@ a, a:visited {
 }
 
 .team span:hover {
-    color: #4B5300;
+    color: #751819;
 }
 
 #pink h1 {
@@ -123,9 +125,9 @@ a, a:visited {
 #gamebar {
     width: 98.8%;
     height: 68px;
-    background-color: #C6D068;
+    background-color: #c3292b;
     float: left;
-    border: 1px solid #737D15;
+    border: 1px solid #992022;
     margin: 5px;
     -webkit-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
     -moz-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
@@ -140,7 +142,7 @@ a, a:visited {
     font-size: 40px;
     margin: 5px 0 0 0;
     font-weight: bold;
-    color: #4B5300;
+    color: #fff;
 }
 
 #gameid {
@@ -148,7 +150,7 @@ a, a:visited {
     float: right;
     font-size: 40px;
     margin: 5px 10px 0 0;
-    color: #4B5300;
+    color: #fff;
 }
 
 #gameid:before {
@@ -159,9 +161,9 @@ a, a:visited {
     -webkit-border-radius: 11;
     -moz-border-radius: 11;
     border-radius: 11px;
-    color: #C6D068;
+    color: #fff;
     font-size: 20px;
-    background: #737D15;
+    background: #992022;
     padding: 10px 20px 10px 20px;
     text-decoration: none;
     width: 10%;
@@ -172,7 +174,7 @@ a, a:visited {
 }
 
 #newgame:hover {
-    background: #4B5300;
+    background: #751819;
     text-decoration: none;
 }
 
@@ -186,8 +188,8 @@ a, a:visited {
     display: none;
     height: 200px;
     float: left;
-    background-color: #C6D068;
-    border: 1px solid #737D15;
+    background-color: #c3292b;
+    border: 1px solid #992022;
     padding: 20px;
     margin: 5px;
     -webkit-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
@@ -198,17 +200,24 @@ a, a:visited {
 
 #gamedetails p {
     display: none;
-    color: #4B5300;
+    color: #fff;
     font-size: 17px;
+}
+
+.cri {
+    position: absolute;
+    width: 51px;
+    top: 0px;
+    left: 0;
 }
 
 #gameimage {
     display: none;
     height: 240px;
     float: left;
-    background-color: #C6D068;
-    border: 1px solid #737D15;
-    color: #4B5300;
+    background-color: #c3292b;
+    border: 1px solid #992022;
+    color: #751819;
     padding: 0;
     margin: 5px;
     overflow: hidden;
@@ -221,9 +230,9 @@ a, a:visited {
     width: 14.5%;
     height: 240px;
     float: left;
-    background-color: #C6D068;
-    border: 1px solid #737D15;
-    color: #4B5300;
+    background-color: #c3292b;
+    border: 1px solid #992022;
+    color: #751819;
     margin: 5px;
     -webkit-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
     -moz-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
@@ -234,9 +243,9 @@ a, a:visited {
     -webkit-border-radius: 11;
     -moz-border-radius: 11;
     border-radius: 11px;
-    color: #C6D068;
+    color: #fff;
     font-size: 20px;
-    background: #737D15;
+    background: #992022;
     padding: 10px 20px 10px 20px;
     text-decoration: none;
     width: 10%;
@@ -247,7 +256,7 @@ a, a:visited {
 }
 
 .button:hover {
-    background: #4B5300;
+    background: #751819;
     text-decoration: none;
 }
 
@@ -259,7 +268,7 @@ a, a:visited {
     padding: 0;
     height: 22px;
     font-size: 16px;
-    color: #ff9898;
+    color: #fff;
     font-weight: bold;
 }
 
@@ -268,9 +277,9 @@ a, a:visited {
     width: 950px;
     height: 500px;
     float: left;
-    background-color: #C6D068;
-    border: 1px solid #737D15;
-    color: #4B5300;
+    background-color: #c3292b;
+    border: 1px solid #992022;
+    color: #751819;
     padding: 0;
     margin: 5px;
     -webkit-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
@@ -282,9 +291,9 @@ a, a:visited {
     width: 580px;
     height: 270px;
     float: left;
-    background-color: #C6D068;
-    border: 1px solid #737D15;
-    color: #4B5300;
+    background-color: #c3292b;
+    border: 1px solid #992022;
+    color: #751819;
     padding: 0;
     margin: 5px;
     -webkit-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
@@ -296,6 +305,7 @@ a, a:visited {
     font-family: 'Arial';
     font-weight: bold;
     font-size: 430px;
+    color: #fff;
 }
 
 #reponse {
@@ -330,14 +340,22 @@ a, a:visited {
 #difficile {
     width: 110px;
     font-size: 18px;
-    color: red;
+    color: rgba(240, 35, 35, 0.84);
     float: left;
+}
+
+h1 {
+    color: #fff;
+}
+
+h2 {
+    color: #fff;
 }
 
 #facile {
     width: 110px;
     font-size: 18px;
-    color: white;
+    color: rgba(50, 179, 29, 0.7);
     float: left;
 }
 
@@ -346,8 +364,8 @@ a, a:visited {
     width: 38.3%;
     height: 240px;
     float: left;
-    background-color: #C6D068;
-    border: 1px solid #737D15;
+    background-color: #c3292b;
+    border: 1px solid #992022;
     padding: 0px;
     margin: 5px;
     -webkit-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
@@ -357,9 +375,10 @@ a, a:visited {
 }
 
 #gameanswer p {
-    font-size: 35px;
-    color: #4B5300;
+    font-size: 49px;
+    color: #751819;
     font-weight: bold;
+    line-height: 60px;
 }
 
 .green {
@@ -367,5 +386,5 @@ a, a:visited {
 }
 
 .red {
-    color: red;
+    color: rgb(129, 13, 13);
 }
