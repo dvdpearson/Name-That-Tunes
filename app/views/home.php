@@ -38,7 +38,7 @@
         <div id="scores">
             <div id="pink" class="team onethird">
                 <img src="/img/cri.jpg" class="cri" />
-                <h1>Équipe ROSE NANANE</h1>
+                <h1>Les Pink Fluffy Unicorns</h1>
                 <p class="score"><?php echo $pinkScore; ?></p>
                 <p class="modifyscore">
                     <span class="icon-plus" href="#"></span><br />
@@ -47,7 +47,7 @@
             </div>
             <div id="yellow" class="team onethird">
                 <img src="/img/cri.jpg" class="cri" />
-                <h1>Équipe JAUNE SERIN</h1>
+                <h1>Les Serins Frappés Sauvages</h1>
                 <p class="score"><?php echo $yellowScore; ?></p>
                 <p class="modifyscore">
                     <span class="icon-plus" href="#"></span><br />
@@ -56,7 +56,7 @@
             </div>
             <div id="green" class="team onethird">
                 <img src="/img/cri.jpg" class="cri" />
-                <h1>Équipe VERT CACA D'OIE</h1>
+                <h1>Les Yoda's Green Machines</h1>
                 <p class="score"><?php echo $greenScore; ?></p>
                 <p class="modifyscore">
                     <span class="icon-plus" href="#"></span><br />

@@ -50,10 +50,10 @@ a, a:visited {
 
 .team {
     position: relative;
-    background-color: #c3292b;
+    background-color: #d0d1d3;
     height: 300px;
     float: left;
-    border: 1px solid #992022;
+    border: 1px solid #888B90;
     margin: 5px;
     -webkit-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
     -moz-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
@@ -67,7 +67,7 @@ a, a:visited {
     width: 100%;
     font-size: 24px;
     background-color: red;
-    border-bottom: 1px solid #992022;
+    border-bottom: 1px solid #888B90;
 }
 
 .score {
@@ -75,7 +75,7 @@ a, a:visited {
     font-family: 'Arial';
     margin: 0;
     padding: 0;
-    color: #751819;
+    color: #000000;
     font-weight: bold;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -84,7 +84,7 @@ a, a:visited {
 }
 
 .team span {
-    color: #992022;
+    color: #888B90;
     font-size: 30px;
     cursor: pointer;
 }
@@ -103,11 +103,11 @@ a, a:visited {
 }
 
 .team span:hover {
-    color: #751819;
+    color: #000000;
 }
 
 #pink h1 {
-    background-color: deeppink;
+    background-color: #e4accb;
 }
 
 #yellow h1 {
@@ -115,7 +115,7 @@ a, a:visited {
 }
 
 #green h1 {
-    background-color: forestgreen;
+    background-color: #697866;
 }
 
 .onethird {
@@ -125,9 +125,9 @@ a, a:visited {
 #gamebar {
     width: 98.8%;
     height: 68px;
-    background-color: #c3292b;
+    background-color: #d0d1d3;
     float: left;
-    border: 1px solid #992022;
+    border: 1px solid #888B90;
     margin: 5px;
     -webkit-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
     -moz-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
@@ -142,7 +142,7 @@ a, a:visited {
     font-size: 40px;
     margin: 5px 0 0 0;
     font-weight: bold;
-    color: #fff;
+    color: #000;
 }
 
 #gameid {
@@ -150,7 +150,7 @@ a, a:visited {
     float: right;
     font-size: 40px;
     margin: 5px 10px 0 0;
-    color: #fff;
+    color: #000;
 }
 
 #gameid:before {
@@ -163,7 +163,7 @@ a, a:visited {
     border-radius: 11px;
     color: #fff;
     font-size: 20px;
-    background: #992022;
+    background: #888B90;
     padding: 10px 20px 10px 20px;
     text-decoration: none;
     width: 10%;
@@ -174,7 +174,7 @@ a, a:visited {
 }
 
 #newgame:hover {
-    background: #751819;
+    background: #636569;
     text-decoration: none;
 }
 
@@ -188,8 +188,8 @@ a, a:visited {
     display: none;
     height: 200px;
     float: left;
-    background-color: #c3292b;
-    border: 1px solid #992022;
+    background-color: #d0d1d3;
+    border: 1px solid #888B90;
     padding: 20px;
     margin: 5px;
     -webkit-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
@@ -200,7 +200,7 @@ a, a:visited {
 
 #gamedetails p {
     display: none;
-    color: #fff;
+    color: #000;
     font-size: 17px;
 }
 
@@ -215,9 +215,9 @@ a, a:visited {
     display: none;
     height: 240px;
     float: left;
-    background-color: #c3292b;
-    border: 1px solid #992022;
-    color: #751819;
+    background-color: #d0d1d3;
+    border: 1px solid #888B90;
+    color: #000000;
     padding: 0;
     margin: 5px;
     overflow: hidden;
@@ -230,9 +230,9 @@ a, a:visited {
     width: 14.5%;
     height: 240px;
     float: left;
-    background-color: #c3292b;
-    border: 1px solid #992022;
-    color: #751819;
+    background-color: #d0d1d3;
+    border: 1px solid #888B90;
+    color: #000000;
     margin: 5px;
     -webkit-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
     -moz-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
@@ -245,7 +245,7 @@ a, a:visited {
     border-radius: 11px;
     color: #fff;
     font-size: 20px;
-    background: #992022;
+    background: #888B90;
     padding: 10px 20px 10px 20px;
     text-decoration: none;
     width: 10%;
@@ -256,7 +256,7 @@ a, a:visited {
 }
 
 .button:hover {
-    background: #751819;
+    background: #636569;
     text-decoration: none;
 }
 
@@ -277,9 +277,9 @@ a, a:visited {
     width: 950px;
     height: 500px;
     float: left;
-    background-color: #c3292b;
-    border: 1px solid #992022;
-    color: #751819;
+    background-color: #d0d1d3;
+    border: 1px solid #888B90;
+    color: #000000;
     padding: 0;
     margin: 5px;
     -webkit-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
@@ -291,9 +291,9 @@ a, a:visited {
     width: 580px;
     height: 270px;
     float: left;
-    background-color: #c3292b;
-    border: 1px solid #992022;
-    color: #751819;
+    background-color: #d0d1d3;
+    border: 1px solid #888B90;
+    color: #000000;
     padding: 0;
     margin: 5px;
     -webkit-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
@@ -305,7 +305,7 @@ a, a:visited {
     font-family: 'Arial';
     font-weight: bold;
     font-size: 430px;
-    color: #fff;
+    color: #000;
 }
 
 #reponse {
@@ -345,17 +345,17 @@ a, a:visited {
 }
 
 h1 {
-    color: #fff;
+    color: #000;
 }
 
 h2 {
-    color: #fff;
+    color: #000;
 }
 
 #facile {
     width: 110px;
     font-size: 18px;
-    color: rgba(50, 179, 29, 0.7);
+    color: rgba(36, 255, 0, 1);
     float: left;
 }
 
@@ -364,8 +364,8 @@ h2 {
     width: 38.3%;
     height: 240px;
     float: left;
-    background-color: #c3292b;
-    border: 1px solid #992022;
+    background-color: #d0d1d3;
+    border: 1px solid #888B90;
     padding: 0px;
     margin: 5px;
     -webkit-box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.45);
@@ -376,7 +376,7 @@ h2 {
 
 #gameanswer p {
     font-size: 49px;
-    color: #751819;
+    color: #000000;
     font-weight: bold;
     line-height: 60px;
 }
@@ -386,5 +386,5 @@ h2 {
 }
 
 .red {
-    color: rgb(129, 13, 13);
+    color: red;
 }

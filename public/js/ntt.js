@@ -80,10 +80,21 @@ $(document).ready(function () {
             type: "GET",
             url: "/game/" + $('#gameid').html()
         }).done(function (game) {
+            $.ajax({
+                url:'/covers/'+game.gameId+'.jpg',
+                type:'HEAD',
+                error: function()
+                {
+                    $('#gameimage').hide();
+                },
+                success: function()
+                {
+                    $('#gameimage img').attr('src', '/covers/'+game.gameId+'.jpg');
+                    $('#gameimage').show();
+                    $('#gameimage').addClass('magictime puffIn');
+                }
+            });
 
-            $('#gameimage img').attr('src', '/covers/'+game.gameId+'.jpg');
-            $('#gameimage').show();
-            $('#gameimage').addClass('magictime puffIn');
 
             $('#gameanswer').show();
             var answer = '';
@@ -93,7 +104,6 @@ $(document).ready(function () {
                 game.gameName.trim() == 'Sifflez la chanson') {
                 answer = '<p style="margin-bottom: 10px;">' + game.tuneArtist + '</p><p style="margin-top: 10px;">' + game.tuneName + '</p>';
             } else if (game.gameName.trim() == 'Quiz musical') {
-                $('#gameimage').hide();
                 answer = '<p style="margin-top: 71px;">' + game.answer + '</p>';
             }
             $('#gameanswer').html(answer);
