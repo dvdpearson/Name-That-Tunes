@@ -34,8 +34,8 @@ Route::get('/game', function()
     $game = Game::where('used', '!=', '1')->orderBy(DB::raw('RAND()'))->firstOrFail();
     if (trim($game->gameName) !== "Quiz musical") {
         // TODO: uncomment for prod
-        //$game->used = 1;
-        //$game->save();
+        $game->used = 1;
+        $game->save();
     }
     return $game;
 });
@@ -44,8 +44,8 @@ Route::get('/game/quiz/{category}', function($category)
 {
     $game = Game::where('category', $category)->orderBy(DB::raw('RAND()'))->firstOrFail();
     // TODO: uncomment for prod
-    //$game->used = 1;
-    //$game->save();
+    $game->used = 1;
+    $game->save();
     return $game;
 });
 
